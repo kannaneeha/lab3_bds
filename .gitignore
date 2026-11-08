@@ -1,0 +1,15 @@
+# Git ignore rules for Lab 3
+# These files/folders will NOT be tracked by Git.
+
+# Node.js dependencies (reinstalled via npm install)
+node_modules/
+
+# Environment variables (contains sensitive data)
+.env
+
+# Log files
+*.log
+
+# System files
+.DS_Store
+Thumbs.db

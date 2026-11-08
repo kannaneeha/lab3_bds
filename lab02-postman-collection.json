@@ -1,0 +1,206 @@
+{
+  "info": {
+    "name": "Lab 2 - Books Library API",
+    "description": "Postman collection for Lab 2 CRUD API - Amrruth Bhushan",
+    "_postman_id": "lab02-books-api-collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/",
+          "host": ["{{baseUrl}}"],
+          "path": [""]
+        }
+      }
+    },
+    {
+      "name": "GET All Books",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/books/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", ""]
+        }
+      }
+    },
+    {
+      "name": "GET Single Book (ID=1)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/books/1/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", "1", ""]
+        }
+      }
+    },
+    {
+      "name": "GET Single Book - Not Found (ID=999)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/books/999/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", "999", ""]
+        }
+      }
+    },
+    {
+      "name": "GET Single Book - Invalid ID (abc)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/books/abc/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", "abc", ""]
+        }
+      }
+    },
+    {
+      "name": "POST Create Book",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Atomic Habits\",\n  \"author\": \"James Clear\",\n  \"price\": 450,\n  \"pages\": 320\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/books/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", ""]
+        }
+      }
+    },
+    {
+      "name": "POST Create Book - Missing Fields (Error)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Incomplete Book\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/books/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", ""]
+        }
+      }
+    },
+    {
+      "name": "POST Create Book - Invalid Price (Error)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Bad Book\",\n  \"author\": \"Some Author\",\n  \"price\": \"not-a-number\",\n  \"pages\": 200\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/books/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", ""]
+        }
+      }
+    },
+    {
+      "name": "PUT Update Book (ID=1)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Atomic Habits - Revised Edition\",\n  \"author\": \"James Clear\",\n  \"price\": 499,\n  \"pages\": 340\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/books/1/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", "1", ""]
+        }
+      }
+    },
+    {
+      "name": "PUT Update Book - Not Found (ID=999)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Ghost Book\",\n  \"author\": \"Nobody\",\n  \"price\": 100,\n  \"pages\": 100\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/books/999/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", "999", ""]
+        }
+      }
+    },
+    {
+      "name": "DELETE Book (ID=10)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/books/10/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", "10", ""]
+        }
+      }
+    },
+    {
+      "name": "DELETE Book - Not Found (ID=999)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/books/999/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", "999", ""]
+        }
+      }
+    }
+  ]
+}
