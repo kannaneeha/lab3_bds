@@ -3,8 +3,8 @@
 > **Course:** Backend Development Fundamentals  
 > **Academic Year:** Year II, Term II  
 > **College:** NIAT Aurora  
-> **Faculty:** Joel Prashanth D  
-> **Student Name:** Amrruth Bhushan  
+> **Faculty:** shiva sai teja  
+> **Student Name:** kanna neeharika
 > **Branch:** AI & Data Engineering  
 
 ---
